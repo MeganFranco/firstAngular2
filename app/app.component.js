@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,22 +10,26 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, courses_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (courses_component_1_1) {
+                courses_component_1 = courses_component_1_1;
             }],
         execute: function() {
-            /*your root component is nothing but a plain */
             AppComponent = (function () {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1>'
+                        template: '<h1>Hello Angular</h1> <courses></courses>',
+                        /*remember that we use directives to extend the DOM*/
+                        directives: [courses_component_1.CoursesComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
@@ -35,4 +39,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         }
     }
 });
+/*
+notes: here we use the courses component to make a new element.
+every component is technically a directive, but the difference is that components have templates, whereas directives don't
+
+in the directives array: be sure to specify any of the components/directives that are used in the template in this component file
+
+the exported class --AppComponent-- on ln16 is the root of the app, it's the view component that takes control of the entire page
+*/ 
 //# sourceMappingURL=app.component.js.map
