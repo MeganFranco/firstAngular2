@@ -3,12 +3,13 @@ import {Component} from 'angular2/core';
 it's just decorated with the componend decorator
 also, think of this component as your root view*/
 import { CoursesComponent } from './courses.component';
+import { FavoriteComponent } from './favorite.component';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>Hello Angular</h1> <courses></courses>',
+    template: '<h1>Hello Angular</h1> <favorite></favorite><courses></courses>',
     /*remember that we use directives to extend the DOM*/
-    directives: [CoursesComponent]
+    directives: [CoursesComponent FavoriteComponent]
     
 })
 
