@@ -7,9 +7,9 @@ import { FavoriteComponent } from './favorite.component';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>Hello Angular</h1> <favorite></favorite><courses></courses>',
+    template: `<courses></courses><favorite></favorite>`,
     /*remember that we use directives to extend the DOM*/
-    directives: [CoursesComponent FavoriteComponent]
+    directives: [CoursesComponent, FavoriteComponent]
     
 })
 
