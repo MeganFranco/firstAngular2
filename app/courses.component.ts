@@ -2,7 +2,7 @@
 import { Component } from 'angular2/core'
 //dependancy injection
 import { CourseService } from './course.service'
-
+import { AutoGrowDirective } from './auto-grow.directive'
 /*add the comonent decorator*/
     @Component({
         /*add your attrubutes*/
@@ -10,14 +10,17 @@ import { CourseService } from './course.service'
         template: ` 
             <h2>Courses</h2>
             {{ title }}
+            <input type="text" [(ngModel)]="newInput" autoGrow>
+            <p> {{ newInput }} </p>
             <ul>
                 <li *ngFor="#course of courses"> 
                     {{ course }}
                 </li>
             </ul>
             `, //the backtick allows for you to write the template in multiple lines
-        providers: [CourseService]
+        providers: [CourseService],
         /*use the provider attribute for dependancy injection*/
+        directives: [AutoGrowDirective]
     })
 /*create the class
 in typescript, each file is considered a 'module' and in each of these you often export one of more things 
@@ -26,7 +29,7 @@ in typescript, each file is considered a 'module' and in each of these you often
 export class CoursesComponent {
     /*components wrap the data and the logic behind the view, so you can add properties to your component and display them in a template*/
     //add the title propertiy
-    title = "The title of the courses page";
+//    title = "The title of the courses page";
     courses;
 
 //note the naming conventions of the constuctors...
@@ -40,4 +43,5 @@ export class CoursesComponent {
 other notes: in the real world, we often get data from a service, so the courses array ln28 shouldn't really be here
 there shouldn't be any logic here other than the view logic
 all the logic not about a specific view should be in a seperate service class
+the provider on ln19 is important!! it's where we inject the dependancy in order to finish the component and export it
 */
