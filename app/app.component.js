@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './authors.component', './auto-grow.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './authors.component', './auto-grow.directive', './favorite.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './authors.component', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, auto_grow_directive_1;
+    var core_1, courses_component_1, authors_component_1, auto_grow_directive_1, favorite_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['angular2/core', './courses.component', './authors.component', 
             },
             function (auto_grow_directive_1_1) {
                 auto_grow_directive_1 = auto_grow_directive_1_1;
+            },
+            function (favorite_component_1_1) {
+                favorite_component_1 = favorite_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -33,9 +36,9 @@ System.register(['angular2/core', './courses.component', './authors.component', 
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <input type=\"button\"\n\n<!--\n        <h1>Hello Angular</h1>\n        <input type=\"text\" [value]=\"title\" (input)=\"title = $event.target.value\" />\n        \n        <input type=\"button\" (click)=\"title = ''\" value=\"Clear\" />\n        Preview: {{ title }}\n        <courses></courses>\n        \n        <authors></authors> -->\n",
+                        template: "\n        <favorite></favorite>\n\n<!--\n        <h1>Hello Angular</h1>\n        <input type=\"text\" [value]=\"title\" (input)=\"title = $event.target.value\" />\n        \n        <input type=\"button\" (click)=\"title = ''\" value=\"Clear\" />\n        Preview: {{ title }}\n        <courses></courses>\n        \n        <authors></authors> -->\n",
                         /*remember that we use directives to extend the DOM*/
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorComponent, auto_grow_directive_1.AutoGrowDirective]
+                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorComponent, auto_grow_directive_1.AutoGrowDirective, favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

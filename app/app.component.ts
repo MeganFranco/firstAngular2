@@ -4,12 +4,13 @@ it's just decorated with the componend decorator
 also, think of this component as your root view*/
 import { CoursesComponent } from './courses.component';
 import { AuthorComponent } from './authors.component';
-import { AutoGrowDirective } from './auto-grow.directive'
+import { AutoGrowDirective } from './auto-grow.directive';
+import { FavoriteComponent } from './favorite.component';
 
 @Component({
     selector: 'my-app',
     template: `
-        <input type="button"
+        <favorite></favorite>
 
 <!--
         <h1>Hello Angular</h1>
@@ -22,7 +23,7 @@ import { AutoGrowDirective } from './auto-grow.directive'
         <authors></authors> -->
 `,
     /*remember that we use directives to extend the DOM*/
-    directives: [CoursesComponent, AuthorComponent, AutoGrowDirective]
+    directives: [CoursesComponent, AuthorComponent, AutoGrowDirective, FavoriteComponent]
     
 })
 
